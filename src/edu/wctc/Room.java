@@ -40,7 +40,30 @@ public abstract class Room {
     public abstract String getDescription();
 
     public Room getAdjoiningRoom(char dir) {
-
+        if (isValidDirection(dir)) {
+            switch (dir) {
+                case 'n':
+                    return north;
+                break;
+                case 's':
+                    return south;
+                break;
+                case 'e':
+                    return east;
+                break;
+                case 'w':
+                    return west;
+                break;
+                case 'u':
+                    return up;
+                break;
+                case 'd':
+                    return down;
+                break;
+            }
+        } else {
+            return null;
+        }
     }
 
     public String getExits() {
@@ -52,6 +75,25 @@ public abstract class Room {
     }
 
     public boolean isValidDirection(char dir) {
-
+        switch (dir) {
+            case 'n':
+                return north != null;
+                break;
+            case 's':
+                return south != null;
+                break;
+            case 'e':
+                return east != null;
+                break;
+            case 'w':
+                return west != null;
+                break;
+            case 'u':
+                return up != null;
+                break;
+            case 'd':
+                return down != null;
+                break;
+        }
     }
 }
