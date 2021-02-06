@@ -7,10 +7,9 @@ public class Maze {
 
     public Maze(Player player) {
         this.player = player;
-        Tunnel firstTunnel = new Tunnel("Tunnel one");
-        Tunnel secondTunnel = new Tunnel("Tunnel two");
-        firstTunnel.setNorth(secondTunnel);
-        secondTunnel.setSouth(firstTunnel);
+        Tunnel firstTunnel = new Tunnel("Entrance tunnel");
+        Basement basement = new Basement("Basement");
+        firstTunnel.setDown(basement);
         currentRoom = firstTunnel;
     }
 
