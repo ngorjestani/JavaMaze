@@ -44,6 +44,7 @@ public abstract class Room {
             switch (dir) {
                 case 'n':
                     return north;
+
                 case 's':
                     return south;
                 case 'e':
