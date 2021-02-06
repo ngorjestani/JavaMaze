@@ -57,5 +57,15 @@ public class Maze {
         return player.getInventory();
     }
 
-    public String getCurrentRoomDescription()
+    public String getCurrentRoomDescription() {
+        return currentRoom.getDescription();
+    }
+
+    public String getCurrentRoomExits() {
+        return currentRoom.getExits();
+    }
+
+    public boolean isFinished() {
+        return isFinished;
+    }
 }
