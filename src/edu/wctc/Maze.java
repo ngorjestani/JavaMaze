@@ -9,8 +9,26 @@ public class Maze {
         this.player = player;
         Tunnel firstTunnel = new Tunnel("Entrance tunnel");
         Basement basement = new Basement("Basement");
+        Closet closet = new Closet("Closet");
+        BasementRoom basementSecondRoom = new BasementRoom("Second room in basement");
+        Bedroom bedroom = new Bedroom("West bedroom");
+        Hallway hallway = new Hallway("Long hallway");
+        Stairwell stairwell = new Stairwell("Stairwell to exit");
         firstTunnel.setDown(basement);
+        basement.setUp(firstTunnel);
+        basement.setWest(basementSecondRoom);
+        basementSecondRoom.setEast(basement);
+        firstTunnel.setEast(closet);
+        closet.setWest(firstTunnel);
+        firstTunnel.setWest(bedroom);
+        bedroom.setEast(firstTunnel);
+        bedroom.setDown(basementSecondRoom);
+        basementSecondRoom.setUp(bedroom);
         currentRoom = firstTunnel;
+        firstTunnel.setNorth(hallway);
+        hallway.setSouth(firstTunnel);
+        hallway.setNorth(stairwell);
+        stairwell.setSouth(hallway);
     }
 
     public String exitCurrentRoom() {
