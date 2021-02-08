@@ -7,7 +7,7 @@ public class Stairwell extends Room implements Exit {
 
     @Override
     public String exit(Player player) {
-        return "You have escaped!";
+        return "You have escaped! Your score is " + player.getScore();
     }
 
     @Override
